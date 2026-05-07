@@ -193,7 +193,7 @@ The system demonstrates strong real-time capability, as processing latency is si
 | 20 | 4.76 | 2 | 2 | 3.10691666666667 |
 | 21 | 5.01 | 2 | 2 | 2.770625 |
 
-Full log available here: [prediction_log.csv](results/prediction_log.csv)
+> Full log available here: [prediction_log.csv](results/prediction_log.csv)
 
 ## Key takeaway:  
-> While the system achieves low latency and continuous decoding, prediction stability remains a critical challenge, highlighting the importance of temporal smoothing and system-level design in real-world BCI applications.
+While the system achieves low latency and continuous decoding, prediction stability remains a critical challenge, highlighting the importance of temporal smoothing and system-level design in real-world BCI applications.
