@@ -2,6 +2,19 @@
 
 This repository demonstrates a **real-time brain–computer interface (BCI) decoding pipeline** using EEG motor imagery data. It extends previous work from offline classification toward **latency-aware, streaming inference** using sliding windows.
 
+## Project Evolution
+
+This work is part of a structured progression:
+
+1- [Baseline CSP pipeline](https://github.com/SanazRezvani/eeg-motor-imagery-csp)
+ 
+2- [FBCSP extension](https://github.com/SanazRezvani/eeg-motor-imagery-fbcsp)  
+
+### 3- **Current project:** Real-time decoding simulation
+
+This work is based on **BCI Competition III – Dataset IVa**. Read the [Dataset description](https://www.bbci.de/competition/iii/desc_IVa.html)
+
+---
 ## Objective
 
 Most EEG classification pipelines are evaluated offline using labelled trials. However, real-world BCI systems must:
@@ -16,18 +29,6 @@ This project simulates that transition by:
 - Performing real-time feature extraction and classification
 - Evaluating Latency and System Feasibility
 - Analysing temporal prediction behaviour
-
----
-## Project Evolution
-
-This work is part of a structured progression:
-
-1- [Baseline CSP pipeline](https://github.com/SanazRezvani/eeg-motor-imagery-csp)
- 
-2- [FBCSP extension](https://github.com/SanazRezvani/eeg-motor-imagery-fbcsp)  
-
-### 3- **Current project:** Real-time decoding simulation
----
 
 ## Two-Phase Pipeline
 ### 1- Offline phase:
@@ -60,7 +61,7 @@ config.num_csp_pairs = 1;
 config.trial_length_s = 3.5;
 config.window_length_s = 1.0;
 config.step_size_s = 0.25;
-config.classifier_type = 'KNN'; % options: 'LDA', 'SVM', 'KNN'
+config.classifier_type = 'KNN';      % options: 'LDA', 'SVM', 'KNN'
 config.filter_bank = [8 12; 10 14; 12 16; 14 18; 16 20; 18 22; 20 24; 22 26; 24 28; 26 30];
 ```
 
