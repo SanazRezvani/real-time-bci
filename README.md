@@ -30,10 +30,10 @@ This work is part of a structured progression:
 ---
 
 ## Two-Phase Pipeline
-### Offline phase:
+### 1- Offline phase:
 - Apply Filter Bank Common Spatial Pattern (FBCSP) and extract features across multiple sub-bands using labelled trials
 
-### Real-time simulation phase:
+### 2- Real-time simulation phase:
 - Treat test trials as an incoming EEG stream
 - Apply sliding windows
 - Extract FBCSP features per window
