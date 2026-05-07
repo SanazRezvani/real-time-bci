@@ -2,17 +2,6 @@
 
 This repository demonstrates a **real-time brain–computer interface (BCI) decoding pipeline** using EEG motor imagery data. It extends previous work from offline classification toward **latency-aware, streaming inference** using sliding windows.
 
-
-## Project Evolution
-
-This work is part of a structured progression:
-
-1- [Baseline CSP pipeline](https://github.com/SanazRezvani/eeg-motor-imagery-csp)
- 
-2- [FBCSP extension](https://github.com/SanazRezvani/eeg-motor-imagery-fbcsp)  
-
-### 3- **Current project:** Real-time decoding simulation
-
 ## Objective
 
 Most EEG classification pipelines are evaluated offline using pre-segmented trials. However, real-world BCI systems must:
@@ -27,19 +16,27 @@ This project simulates that transition by:
 - Performing real-time feature extraction and classification
 - Measuring processing latency
 - Analysing temporal prediction behaviour
-  
-## System Overview
-### Two-Phase Pipeline
-1. Offline Phase (Training)
-- Apply Filter Bank CSP (FBCSP)
-- Extract features across multiple sub-bands
-- Train classifier (LDA / SVM / KNN)
-2. Real-Time Phase (Simulation)
-- Simulate continuous EEG stream
+
+## Project Evolution
+
+This work is part of a structured progression:
+
+1- [Baseline CSP pipeline](https://github.com/SanazRezvani/eeg-motor-imagery-csp)
+ 
+2- [FBCSP extension](https://github.com/SanazRezvani/eeg-motor-imagery-fbcsp)  
+
+### 3- **Current project:** Real-time decoding simulation
+
+## Two-Phase Pipeline
+### Offline phase:
+- Apply Filter Bank Common Spatial Pattern (FBCSP) and extract features across multiple sub-bands using labelled trials
+
+### Real-time simulation phase:
+- Treat test trials as an incoming EEG stream
 - Apply sliding windows
 - Extract FBCSP features per window
-- Perform classification
-- Log predictions and latency
+- Generate predictions
+- Log processing latency
 
 ## How to Run
 
