@@ -17,6 +17,7 @@ This project simulates that transition by:
 - Evaluating Latency and System Feasibility
 - Analysing temporal prediction behaviour
 
+---
 ## Project Evolution
 
 This work is part of a structured progression:
@@ -26,6 +27,7 @@ This work is part of a structured progression:
 2- [FBCSP extension](https://github.com/SanazRezvani/eeg-motor-imagery-fbcsp)  
 
 ### 3- **Current project:** Real-time decoding simulation
+---
 
 ## Two-Phase Pipeline
 ### Offline phase:
