@@ -65,7 +65,40 @@ config.classifier_type = 'KNN';      % options: 'LDA', 'SVM', 'KNN'
 config.filter_bank = [8 12; 10 14; 12 16; 14 18; 16 20; 18 22; 20 24; 22 26; 24 28; 26 30];
 ```
 
-## Sliding Window Design
+## Notes on the offline phase
+
+Motor imagery EEG activity is distributed across multiple frequency ranges, primarily within the mu (8–13 Hz) and beta (13–30 Hz) bands and the most informative frequency sub-bands can vary between subjects. Applying CSP on a single broad band may overlook frequency-specific patterns 
+
+Filter Bank CSP (FBCSP) addresses this by:
+- Decomposing EEG signals into multiple sub-bands
+- Extracting spatial features from each sub-band
+- Capturing complementary information across frequencies
+
+This leads to a richer feature representation and can improve classification performance, especially in subject-specific decoding scenarios.
+
+##3 Key Features
+
+- Extension of a baseline CSP-based motor imagery decoding pipeline
+- Filter bank decomposition across mu and beta rhythms (8–30 Hz)
+- 10 overlapping sub-bands (4 Hz width, 2 Hz overlap)
+- CSP feature extraction from each sub-band
+- Concatenation of sub-band features
+- Classification of motor imagery tasks using machine learning
+
+### Design Choices
+
+- **Sub-band design:** 4 Hz bandwidth with 2 Hz overlap to balance frequency resolution and redundancy  
+- **Number of CSP pairs:** 1 pair per sub-band (2 features) to control dimensionality  
+- **Classifier selection:** Compared SVM, KNN, and LDA for robustness  
+- **Feature representation:** Variance of CSP-projected signals, a standard and interpretable choice for motor imagery BCI  
+
+These design decisions aim to balance performance, interpretability, and computational efficiency.
+
+![CSP Animation](csp_animation.gif)
+
+## Notes on the online phase
+
+### Sliding Window Design
 
 - Window length	= 1.0 s
 - Step size =	0.25 s
