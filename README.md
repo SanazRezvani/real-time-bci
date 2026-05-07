@@ -63,4 +63,13 @@ The system demonstrates strong real-time capability, as processing latency is si
 
 Full log available here: [prediction_log.csv](results/prediction_log.csv)
 
+## 📄 Prediction Log
+| WindowIndex | Time (s) | Predicted | True | Latency (ms) |
+|-------------|----------|----------|------|--------------|
+| 1 | 0.01 | 2 | 1 | 10.594875 |
+| 2 | 0.26 | 1 | 1 | 7.09304166666667 |
+| 3 | 0.51 | 1 | 1 | 5.99429166666667 |
+| 4 | 0.76 | 1 | 1 | 6.52583333333333 |
+| 5 | 1.01 | 1 | 1 | 7.26666666666667 |
+| 6 | 1.26 | 1 | 1 | 5.82733333333333 |
 
