@@ -94,7 +94,58 @@ This leads to a richer feature representation and can improve classification per
 
 These design decisions aim to balance performance, interpretability, and computational efficiency.
 
+### Extracting CSP features from each sub-band
+
+Implemented in: 
+[`compute_csp_filters.m`](compute_csp_filters.m) (compute_csp_filters) 
+
+For each frequency sub-band, Common Spatial Pattern (CSP) is applied to extract discriminative spatial features between the two motor imagery classes.
+
+CSP computes spatial filters that maximise variance for one class while minimising it for the other. This results in projections that emphasise class-specific neural activity.
+```
+features_band(:, trial_idx) = var(projected_trial, 0, 2);
+```
+
+In this implementation:
+
+CSP is computed independently for each sub-band
+A fixed number of CSP filter pairs are selected per band
+Each trial is projected onto the CSP filters
+The variance of the projected signals is used as the feature representation
+
+This allows the model to capture frequency-specific spatial patterns, which are critical in motor imagery EEG analysis.
+
 ![CSP Animation](results/csp_animation.gif)
+
+### Concatenating features across sub-bands
+
+The CSP features extracted from each sub-band are concatenated to form a single feature vector for each trial.
+
+Since each sub-band captures complementary information from different parts of the mu and beta frequency ranges, combining them provides a richer representation of the underlying neural activity.
+
+In this project:
+
+Each sub-band contributes a set of CSP features
+Features from all sub-bands are stacked vertically
+The final feature vector includes information from all frequency bands
+```
+all_features = [features_band1;
+                features_band2;
+                ...
+                features_bandN];
+```
+In this implementation:
+```
+10 sub-bands × 2 CSP features = 20 features per trial
+```
+
+### Training and evaluating classifiers
+
+One of the following classifiers can be chosen:
+
+- Support Vector Machine (SVM)
+- K-Nearest Neighbors (KNN)
+- Linear Discriminant Analysis (LDA)
 
 ## Notes on the online phase
 
