@@ -57,6 +57,10 @@ Observations
 
 The system demonstrates strong real-time capability, as processing latency is significantly lower than the step size.
 
-![Latency over time](results/Latency_over_time.png)
+![Latency over time](results/latency_over_time.png)
+
+![Prediction_log](results/prediction_log.png)
+
+Full log available here: [prediction_log.csv](results/prediction_log.csv)
 
 
