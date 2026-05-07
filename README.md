@@ -41,6 +41,30 @@ This project simulates that transition by:
 - Perform classification
 - Log predictions and latency
 
+## How to Run
+
+- Download the dataset from [BCI Competition III – Dataset IVa](https://www.bbci.de/competition/iii/)
+
+- Open MATLAB
+
+- Start by loading one of the subjects. ` data_set_IVa_al.mat ` is chosen here.
+
+- Run: ` run_realtime_simulation.m `
+
+Inside `run_realtime_simulation.m`, you can modify:
+``` 
+config.dataset_path = 'data_set_IVa_al.mat';
+config.spatial_filter = 'CAR';       % options: 'CAR', 'Low Laplacian', 'High Laplacian'
+config.filter_order = 3;
+config.train_ratio = 0.70;
+config.num_csp_pairs = 1;
+config.trial_length_s = 3.5;
+config.window_length_s = 1.0;
+config.step_size_s = 0.25;
+config.classifier_type = 'KNN'; % options: 'LDA', 'SVM', 'KNN'
+config.filter_bank = [8 12; 10 14; 12 16; 14 18; 16 20; 18 22; 20 24; 22 26; 24 28; 26 30];
+```
+
 ## Sliding Window Design
 
 - Window length	= 1.0 s
