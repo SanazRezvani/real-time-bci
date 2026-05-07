@@ -76,7 +76,7 @@ Filter Bank CSP (FBCSP) addresses this by:
 
 This leads to a richer feature representation and can improve classification performance, especially in subject-specific decoding scenarios.
 
-##3 Key Features
+### Key Features
 
 - Extension of a baseline CSP-based motor imagery decoding pipeline
 - Filter bank decomposition across mu and beta rhythms (8–30 Hz)
@@ -94,7 +94,7 @@ This leads to a richer feature representation and can improve classification per
 
 These design decisions aim to balance performance, interpretability, and computational efficiency.
 
-![CSP Animation](csp_animation.gif)
+![CSP Animation](results/csp_animation.gif)
 
 ## Notes on the online phase
 
