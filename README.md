@@ -161,7 +161,7 @@ This allows the system to generate predictions every 250 ms while using sufficie
 Observations
 - Initial latency spike (~10 ms) due to system warm-up
 - Stabilises around 2.6–3 ms
-- Occasional small fluctuations
+- The **Streaming accuracy** is **82.93 %**
 
 The system demonstrates strong real-time capability, as processing latency is significantly lower than the step size.
 
