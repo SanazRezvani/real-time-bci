@@ -4,7 +4,7 @@ This repository demonstrates a **real-time brain–computer interface (BCI) deco
 
 ## Objective
 
-Most EEG classification pipelines are evaluated offline using pre-segmented trials. However, real-world BCI systems must:
+Most EEG classification pipelines are evaluated offline using labelled trials. However, real-world BCI systems must:
 
 - Process continuous EEG streams
 - Generate predictions in real time
@@ -14,7 +14,7 @@ This project simulates that transition by:
 
 - Applying sliding window segmentation
 - Performing real-time feature extraction and classification
-- Measuring processing latency
+- Evaluating Latency and System Feasibility
 - Analysing temporal prediction behaviour
 
 ## Project Evolution
